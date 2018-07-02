@@ -8,9 +8,9 @@ This game was made by Liene Tunne, Udacity FEND student
 ## Instructions
 * click a card;
 * try to find another card with the same icon;
-* if they doesnt match, you will see red color on them and cards will close and to have to start searching again;
-* if they match, you will se green color on them and cards will stay open;
-* try to find another pair and so on.
+* if they doesnt match, you will see red color on them and cards will close. You have to start searching again;
+* if they match, you will see green color on cards. Cards will stay open;
+* try to find another pair till all the cards are a match.
 
 ## How to win the game
  To win the game, you must match all the cards.
