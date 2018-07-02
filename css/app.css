@@ -1,0 +1,236 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #ffffff url('../img/geometry2.png'); /* Background pattern from Subtle Patterns */
+    font-family: 'Coda', cursive;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    color:#f34563;
+}
+
+h4 {
+  font-family: 'Open Sans', sans-serif;
+  color: #f34563;
+}
+
+li  {
+  list-style: none;
+  display: inline-block;
+}
+
+/*
+ * Styles for the deck of cards
+ */
+
+.deck {
+    width: 95%;
+    min-height: 680px;
+    background: linear-gradient(160deg, #ce3b9a 0%, #aa7ecd 100%);
+    padding: 32px;
+    border-radius: 10px;
+    box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 3em;
+}
+
+.deck .card {
+    height: 125px;
+    width: 125px;
+    background: #ecedee;
+    font-size: 0;
+    color: #ffffff;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+}
+
+.deck .card.open {
+    transform: rotateY(0);
+    background: #02b3e4;
+    -webkit-transition: all .3s;
+     -moz-transition: all .3s;
+     -o-transition: all .3s;
+     transition: all .3s;
+}
+
+.deck .card.show {
+    font-size: 33px;
+    -webkit-transition: all .3s;
+     -moz-transition: all .3s;
+     -o-transition: all .3s;
+     transition: all .3s;
+}
+
+.deck .card.match {
+    cursor: default;
+    background: #02ccba;
+    font-size: 33px;
+}
+
+.noClick {
+  pointer-events: none;
+  cursor: default;
+}
+/* styles for the stars */
+.color {
+  color: green;
+}
+/*
+ * Styles for the Score Panel
+ */
+.deck .card.doesNotMatch {
+  cursor:unset;
+  background: red;
+
+}
+
+.deck .card.match {
+  cursor:unset;
+  background: green;
+  pointer-events: none;
+}
+
+.score-panel {
+    text-align: left;
+    width: 345px;
+    margin-bottom: 10px;
+}
+
+.score-panel .stars {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    margin: 0 5px 0 0;
+}
+
+.score-panel .stars li {
+    list-style: none;
+    display: inline-block;
+}
+
+.score-panel .restart {
+    float: right;
+    cursor: pointer;
+}
+
+/* styles for winning message */
+.popup {
+  position: absolute;
+  z-index:1;
+  left: 25%;
+  top: 25%;
+  width: 50%;
+  height: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color:#fff;
+  color:#000;
+  -webkit-transition: all .3s;
+   -moz-transition: all .3s;
+   -o-transition: all .3s;
+   transition: all .3s;
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.hide {
+display: none;
+-webkit-transition: all .3s;
+ -moz-transition: all .3s;
+ -o-transition: all .3s;
+ transition: all .3s;
+}
+
+.popup .message{
+  text-align: center;
+}
+
+.exit {
+margin: 5px;
+background-color: white;
+border: solid;
+border-width: 1px;
+border-color: #867f7f;
+cursor: pointer;
+font-size: 18px;
+color: #f34563;
+border-radius: 25px;
+}
+
+.exit:hover{
+  background-color: #f34563;
+  color: white;
+  -webkit-transition: all .3s;
+   -moz-transition: all .3s;
+   -o-transition: all .3s;
+   transition: all .3s;
+}
+
+.fade {
+   opacity: 0.5;
+}
+
+.countMoves, .countStars, .gameTimer {
+  color: #f34563;
+}
+/** media queries **/
+@media (max-width:441px) {
+  .deck {
+    padding: 20px;
+  }
+  .score-panel {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+@media (max-width:720px){
+  .deck {
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    padding:10px;
+  }
+  .card {
+    margin: 5px;
+  }
+}
+@media (min-width:720px){
+  .deck {
+    max-width: 650px;
+    margin-left: auto;
+    margin-right:auto;
+  }
+}
